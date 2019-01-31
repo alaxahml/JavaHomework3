@@ -15,18 +15,19 @@ public class Main {
         System.out.println("Enter balance of the second card");
         bal=scanner.nextInt();
         System.out.println("How much money do you want to get?");
+        Card card1=new Card(name1);
+        Card card2=new Card(name2,bal,Currency.rouble);
         while(true) {
             try {
                 get = scanner.nextInt();
+                card2.get(get);
                 break;
             } catch (Exception e) {
                 System.out.println("Invalid parameter,try again");
-                get = scanner.nextInt();
+                 scanner.nextLine();
             }
         }
-    Card card1=new Card(name1);
-    Card card2=new Card(name2,bal,Currency.rouble);
-    card2.get(get);
+
     card1.show();
     card2.show();
 

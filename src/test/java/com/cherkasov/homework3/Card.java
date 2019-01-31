@@ -26,18 +26,17 @@ public class Card {
 
     }
 
-    public void get(double a) {
-        try {
-            if (balance < 0) {
+    public void get(double a) throws Exception {
+
+            if ((balance-a) < 0) {
                 System.out.println("You are trying to get more than you have!");
+                throw new Exception();
             } else {
 
                 System.out.println("Completed!");
                 balance = balance - a;
             }
-        } catch (Exception e) {
-            System.out.println("Invalid parameter");
-        }
+
     }
 
     public void show() {
